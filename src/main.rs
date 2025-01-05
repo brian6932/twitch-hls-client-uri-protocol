@@ -17,7 +17,10 @@ fn main() {
 
 	args.push(path);
 	for param in parsed_uri.query().iter() {
-		args.push(param.to_string());
+		let parsed_param = param.to_string();
+		if !parsed_param.is_empty() {
+			args.push(parsed_param);
+		}
 	}
 	if args.len() == 1 {
 		args.push("best".to_string());
