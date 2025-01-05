@@ -1,0 +1,6 @@
+hard_tabs = true
+group_imports = 'StdExternalCrate'
+struct_lit_single_line = false
+trailing_semicolon = false
+newline_style = 'unix'
+control_brace_style = 'ClosingNextLine'
