@@ -45,7 +45,7 @@ jobs:
         uses: vimtor/action-zip@v1.2
         id: archive
         with:
-          files: README.md LICENSE ${{ matrix.bin-name }}
+          files: ${{ matrix.bin-name }}
           dest: twitch-hls-client-uri-protocol-${{ matrix.zip-name }}.zip
       - name: Upload archive
         uses: ncipollo/release-action@v1
