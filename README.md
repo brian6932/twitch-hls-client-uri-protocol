@@ -1,4 +1,4 @@
-A minimal wrapper [twitch-hls-client](https://github.com/2bc4/twitch-hls-client) wrapper process for registering a Windows OS URI protocol. The main intention's for use with programs which call URI protocols, in my case, [chatterino2](https://github.com/Chatterino/chatterino2).
+A minimal [twitch-hls-client](https://github.com/2bc4/twitch-hls-client) wrapper process for registering a Windows OS URI protocol. The main intention's for use with programs which call URI protocols, in my case, [chatterino2](https://github.com/Chatterino/chatterino2).
 
 
 ## Chatterino usage
