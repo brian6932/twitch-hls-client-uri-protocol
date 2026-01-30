@@ -3,7 +3,14 @@
 use std::{env::args, os::windows::process::CommandExt, process::Command};
 
 fn main() {
-	let uri = args().nth(1).expect("argument not provided");
+	let mut uri = args().nth(1).expect("argument not provided");
+	if uri.as_str().starts_with("https%") {
+		// Since Chatterino/chatterino2@af573484c41d1db37014567b6dde054b11e32e5c:
+		// The argument is percent encoded, so decode it first.
+		uri = percent_encoding::percent_decode_str(&uri)
+			.decode_utf8_lossy()
+			.into_owned();
+	}
 	let parsed_uri = uriparse::URI::try_from(uri.as_str()).expect("invalid URI");
 	let path = parsed_uri.path().to_string();
 
