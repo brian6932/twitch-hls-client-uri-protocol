@@ -23,10 +23,22 @@ jobs:
             zip-name: x86_64-pc-windows-msvc
 
           - target: x86_64-pc-windows-msvc
+            target-cpu: x86-64-v2
+            os: windows-latest
+            bin-name: twitch-hls-client-uri-protocol.exe
+            zip-name: x86_64-v2-pc-windows-msvc
+
+          - target: x86_64-pc-windows-msvc
             target-cpu: x86-64-v3
             os: windows-latest
             bin-name: twitch-hls-client-uri-protocol.exe
             zip-name: x86_64-v3-pc-windows-msvc
+
+          - target: x86_64-pc-windows-msvc
+            target-cpu: x86-64-v4
+            os: windows-latest
+            bin-name: twitch-hls-client-uri-protocol.exe
+            zip-name: x86_64-v4-pc-windows-msvc
 
     steps:
       - uses: actions/checkout@v4
