@@ -49,7 +49,7 @@ jobs:
           components: rust-src
       - name: Build
         shell: powershell
-        run: $env:RUSTFLAGS="-Ctarget-cpu=${{ matrix.target-cpu }} -Zthreads=$env:NUMBER_OF_PROCESSORS -Zlocation-detail=none"; cargo +nightly build -Zbuild-std=std --release --target=${{ matrix.target }}
+        run: $env:RUSTFLAGS="-Ctarget-cpu=${{ matrix.target-cpu }} -Zthreads=$env:NUMBER_OF_PROCESSORS -Zlocation-detail=none -Zunstable-options -Cpanic=immediate-abort"; cargo +nightly build '-Zbuild-std=std,panic_abort' --release --target=${{ matrix.target }}
       - name: Move binary
         shell: powershell
         run: Move-Item "target/${{ matrix.target }}/release/${{ matrix.bin-name }}" .
